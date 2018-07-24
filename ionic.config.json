@@ -1,0 +1,8 @@
+{
+  "name": "lauraApp",
+  "app_id": "88ab48ce",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
