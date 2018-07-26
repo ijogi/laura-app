@@ -3,18 +3,22 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { FoldersListPage } from '../pages/folders/folders';
+import { FoldersListPage } from '../pages/folders/folders.page';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { CategoriesPage } from '../pages/categories-list/categories';
-import { ProductsListPage } from '../pages/products-list/products-list';
-import { ProductPage } from '../pages/product/product';
+import { CategoriesPage } from '../pages/categories-list/categories.page';
 import { InventoryService } from '../shared/services/inventory.service';
-import { NewFolderModalPage } from '../pages/new-folder-modal/new-folder-modal';
 import { FolderService } from '../pages/folders/services/folder.service';
 import { FormsModule } from '@angular/forms';
 import { CategoryService } from '../pages/categories-list/services/category.service';
+import { ProductsListPage } from '../pages/products/products-list/products-list.page';
+import { ProductPage } from '../pages/products/product/product.page';
+import { ProductService } from '../pages/products/services/product.service';
+import { NewProductModalPage } from '../pages/products/new-product-modal/new-product-modal';
+import { NewCategoryModalPage } from '../pages/categories-list/new-category-modal/new-category-modal';
+import { NewFolderModalPage } from '../pages/folders/new-folder-modal/new-folder-modal';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,9 @@ import { CategoryService } from '../pages/categories-list/services/category.serv
     CategoriesPage,
     ProductsListPage,
     ProductPage,
-    NewFolderModalPage
+    NewFolderModalPage,
+    NewCategoryModalPage,
+    NewProductModalPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,9 @@ import { CategoryService } from '../pages/categories-list/services/category.serv
     CategoriesPage,
     ProductsListPage,
     ProductPage,
-    NewFolderModalPage
+    NewFolderModalPage,
+    NewCategoryModalPage,
+    NewProductModalPage
   ],
   providers: [
     StatusBar,
@@ -45,6 +53,7 @@ import { CategoryService } from '../pages/categories-list/services/category.serv
     InventoryService,
     FolderService,
     CategoryService,
+    ProductService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

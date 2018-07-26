@@ -13,7 +13,6 @@ export class FolderService {
     getFolders(): Observable<Folder[]> {
         return this.folderSubject.asObservable();
     }
-
     
     addFolder(folder: Folder) {
         this.folders = [folder, ... this.folders];

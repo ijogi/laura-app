@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController, ModalController } from 'ionic-angular';
 
-import { CategoriesPage } from '../categories-list/categories';
-import { NewFolderModalPage } from '../new-folder-modal/new-folder-modal';
+import { CategoriesPage } from '../categories-list/categories.page';
 import { FolderService } from './services/folder.service';
 import { Folder } from './intefaces/folder';
+import { NewFolderModalPage } from './new-folder-modal/new-folder-modal';
 
 @Component({
   selector: 'page-folders',
@@ -18,8 +18,8 @@ export class FoldersListPage {
     this.folders$ = this.folderSvc.getFolders();
   }
 
-  goTo(id: number) {
-    this.navCtrl.push(CategoriesPage, { id });
+  goTo(id: number, name: string) {
+    this.navCtrl.push(CategoriesPage, { id, name });
   }
 
   addFolder() {

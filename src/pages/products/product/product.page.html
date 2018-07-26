@@ -8,17 +8,21 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Product</h3>
+  <h3>{{ productName }}</h3>
 
   <ion-card *ngIf="product$ | async as product">
 
     <ion-card-header>
-      {{  product.name }}
+      {{ product.name }}
     </ion-card-header>
-  
+
     <ion-card-content>
-      <!-- Add card content here! -->
+      <p>Price: {{ product.price }} {{ product.currency }}</p>
+      <p>Amount: {{ product.amount }}</p>
+      <p>Cost: {{ product.cost }}</p>
     </ion-card-content>
-  
+
+    <button ion-button outline (click)="productSold(product)">Sell 1</button>
+
   </ion-card>
 </ion-content>

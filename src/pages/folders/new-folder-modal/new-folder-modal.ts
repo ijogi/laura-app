@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
-import { FolderService } from '../folders/services/folder.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { FolderService } from '../services/folder.service';
 
 @Component({
   selector: 'new-folder-modal',

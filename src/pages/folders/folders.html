@@ -10,7 +10,7 @@
 <ion-content padding>
   <h3>Folders</h3>
 
-  <ion-card *ngFor="let folder of folders$ | async" (click)="goTo(folder.id)">
+  <ion-card *ngFor="let folder of folders$ | async" (click)="goTo(folder.id, folder.name)">
 
     <ion-card-header>
       {{ folder.name }}

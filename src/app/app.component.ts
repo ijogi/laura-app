@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { FoldersListPage } from '../pages/folders/folders';
+import { FoldersListPage } from '../pages/folders/folders.page';
 
 @Component({
   templateUrl: 'app.html'

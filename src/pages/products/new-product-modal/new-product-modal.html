@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
+    <ion-toolbar>
+        <ion-title>
+            Create new product
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+                <ion-icon name="md-close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card [formGroup]="productForm">
+
+        <ion-card-header>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-list>
+
+                <ion-item>
+                    <ion-label floating>Product name</ion-label>
+                    <ion-input type="text" value="" formControlName="productName"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Price</ion-label>
+                    <ion-input type="number" value="" formControlName="price"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Amount</ion-label>
+                    <ion-input type="number" value="" formControlName="amount"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Cost</ion-label>
+                    <ion-input type="number" value="" formControlName="cost"></ion-input>
+                </ion-item>
+
+            </ion-list>
+
+            <button ion-button outline (click)="createProduct()">Create product</button>
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>

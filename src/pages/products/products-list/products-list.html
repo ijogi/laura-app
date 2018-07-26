@@ -8,12 +8,12 @@
   </ion-header>
   
   <ion-content padding>
-    <h3>Categories</h3>
+    <h3>{{ categoryName }}</h3>
   
-    <ion-card *ngFor="let category of categories$ | async" (click)="goTo(category.id)">
+    <ion-card *ngFor="let product of products$ | async" (click)="goTo(product.id)">
   
       <ion-card-header>
-        {{  category.name }}
+        {{  product.name }}
       </ion-card-header>
     
       <ion-card-content>
@@ -22,6 +22,6 @@
     
     </ion-card>
 
-    <button ion-button outline (click)="addCategory()">Add category</button>
+    <button ion-button outline (click)="addProduct()">Add product</button>
   </ion-content>
   

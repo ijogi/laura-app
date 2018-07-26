@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ViewController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { CategoryService } from '../categories-list/services/category.service';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'new-category-modal',
@@ -20,7 +20,7 @@ export class NewCategoryModalPage {
     this.folderId = this.params.get('folderId');
   }
 
-  createcategory() {
+  createCategory() {
     const name = this.categoryForm.get('categoryName').value;
     const folderId = this.folderId;
     this.categorySvc.addCategory({id: Math.floor(Math.random() * 1000 + 1), name, folderId });
