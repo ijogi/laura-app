@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
+    <ion-toolbar>
+        <ion-title>
+            Description
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+                <ion-icon name="md-close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <h3>Create new folder</h3>
+
+    <ion-card [formGroup]="folderForm">
+
+        <ion-card-header>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-list>
+
+                <ion-item>
+                    <ion-label floating>Folder name</ion-label>
+                    <ion-input type="text" value="" formControlName="folderName"></ion-input>
+                </ion-item>
+
+            </ion-list>
+
+            <button ion-button outline (click)="createFolder()">Create folder</button>
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>

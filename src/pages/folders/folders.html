@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Folders</h3>
+
+  <ion-card *ngFor="let folder of folders$ | async" (click)="goTo(folder.id)">
+
+    <ion-card-header>
+      {{ folder.name }}
+    </ion-card-header>
+  
+    <ion-card-content>
+      <!-- Add card content here! -->
+    </ion-card-content>
+  
+  </ion-card>
+
+  <button ion-button outline (click)="addFolder()">Add folder</button>
+</ion-content>
