@@ -30,24 +30,25 @@
 
                 <ion-item>
                     <ion-label floating>Product name</ion-label>
-                    <ion-input type="text" value="" formControlName="productName"></ion-input>
+                    <ion-input type="text" formControlName="productName"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label floating>Price</ion-label>
-                    <ion-input type="number" value="" formControlName="price"></ion-input>
+                    <ion-input type="number" formControlName="price"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label floating>Amount</ion-label>
-                    <ion-input type="number" value="" formControlName="amount"></ion-input>
+                    <ion-input type="number" formControlName="amount"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label floating>Cost</ion-label>
-                    <ion-input type="number" value="" formControlName="cost"></ion-input>
+                    <ion-input type="number" formControlName="cost"></ion-input>
                 </ion-item>
 
             </ion-list>
 
-            <button ion-button outline (click)="createProduct()">Create product</button>
+            <button ion-button outline (click)="createProduct()" *ngIf="!productId">Create product</button>
+            <button ion-button outline (click)="updateProduct()" *ngIf="productId">Update product</button>
         </ion-card-content>
 
     </ion-card>

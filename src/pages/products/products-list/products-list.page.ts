@@ -11,7 +11,7 @@ import { NewProductModalPage } from '../new-product-modal/new-product-modal';
   templateUrl: 'products-list.html'
 })
 export class ProductsListPage {
-  private categoryId: number;
+  categoryId: number;
   products$: Observable<Product[]>;
   categoryName: string;
 
@@ -22,7 +22,7 @@ export class ProductsListPage {
   }
 
   goTo(id: number) {
-    this.navCtrl.push(ProductPage, { id });
+    this.navCtrl.push(ProductPage, { id});
   }
 
   addProduct() {

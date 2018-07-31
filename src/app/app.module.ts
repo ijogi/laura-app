@@ -18,6 +18,7 @@ import { ProductService } from '../pages/products/services/product.service';
 import { NewProductModalPage } from '../pages/products/new-product-modal/new-product-modal';
 import { NewCategoryModalPage } from '../pages/categories-list/new-category-modal/new-category-modal';
 import { NewFolderModalPage } from '../pages/folders/new-folder-modal/new-folder-modal';
+import { PriceCalculationService } from '../shared/services/price-calculation.service';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { NewFolderModalPage } from '../pages/folders/new-folder-modal/new-folder
     FolderService,
     CategoryService,
     ProductService,
+    PriceCalculationService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

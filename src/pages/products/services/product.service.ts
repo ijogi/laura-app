@@ -12,6 +12,7 @@ export class ProductService {
     ];
 
     private productsSubject = new BehaviorSubject<Product[]>(this.products);
+    private productSubject = new BehaviorSubject<Product>(null);
 
     getProducts(categoryId: number): Observable<Product[]> {
         return this.productsSubject.asObservable()
@@ -19,7 +20,8 @@ export class ProductService {
     }
 
     getProduct(productId: number): Observable<Product> {
-        return Observable.of(this.products.find(f => f.id === productId));
+        this.productSubject.next(this.products.find(f => f.id === productId));
+        return this.productSubject.asObservable();
     }
 
     addProduct(product: Product) {
@@ -34,7 +36,7 @@ export class ProductService {
         updatedProducts[index] = {...product};
         this.products = updatedProducts;
         this.productsSubject.next(this.products);
-
+        this.productSubject.next(product);
     }
 
 }
